@@ -12,10 +12,27 @@
 {
 	function refreshFriendlist() {
 		let friendItem = document.getElementsByClassName('body__left-item')
+		let avatar = document.getElementById('option-avatar')
+		let name = document.getElementById('option-username')
+		let option = document.getElementById('option-chatbox')
+    let messArr = document.getElementsByClassName('body__chatBox-msgArea-item')
+
 		let n = friendItem.length
 		for (let i = 0; i < n; i++) {
-			// thêm function cho friend item.
-			friendItem[i].addEventListener('click', () => {
+			friendItem[i].addEventListener('click', (e) => {
+        option.style.opacity = '0'
+        for (let i = 0; i < messArr.length; i++) {
+					messArr[i].style.display = 'flex'
+					setTimeout(() => {
+						messArr[i].style.opacity = '1'
+					}, 200)
+				}
+        setTimeout(() => {
+          option.style.display = 'none'
+          avatar.src = friendItem[i].childNodes[1].src
+          name.innerHTML = e.target.childNodes[3].innerHTML
+        }, 200)
+
 				for (let j = 0; j < n; j++) {
 					friendItem[j].classList.remove('friend-item-focus')
 				}
@@ -49,6 +66,7 @@
 {
 	let option = document.getElementById('option-chatbox')
 	let messArr = document.getElementsByClassName('body__chatBox-msgArea-item')
+
 	function cbOption(event) {
 		if (!event.target.classList.contains('body__chatBox-msgArea')) {
 			if (option.style.opacity != '1') {
@@ -87,6 +105,10 @@
 			}
 		}
 	}
+}
+
+function addSuccess(e) {
+	e.target.style.opacity = '0'
 }
 
 refreshFriendlist()

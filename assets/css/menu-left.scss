@@ -70,34 +70,7 @@ body {
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -2px -2px 5px rgba(90, 90, 90, 0.15);
     }
   }
-  &-search {
-    margin: 10px 0 10px 0;
-    padding: 0;
-    background-color: #3a3b3c;
-    position: relative;
-    border-radius: 10px;
-    display: inline-block;
-    &-icon {
-      position: absolute;
-      top: 50%;
-      left: 25px;
-      transform: translate(-50%, -50%) scale(1.2);
-    }
-    & > input {
-      height: 40px;
-      width: 100%;
-      background: #18191a;
-      border-radius: inherit;
-      transition: all 0.2s ease;
-      color: #808385;
-      padding-left: 0;
-      &:focus {
-        outline: none;
-        background: #292a2c;
-        color: #fff;
-      }
-    }
-  }
+  
 }
 .menu-small {
   width: 70px;

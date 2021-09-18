@@ -6,10 +6,6 @@ let iconhide = document.getElementsByClassName('menu-header')
 let infoField = document.getElementsByClassName('notiList')[0]
 let barHint = true
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 4737916 (demo)
 infoField.style.opacity = '0'
 infoField.style.display = 'none'
 
@@ -79,7 +75,7 @@ function grow() {
 			filter.style.animation = 'filter-on 0.3s ease forwards'
 		}, 100)
 		document.getElementById('nagication-bar').classList.remove('menu-small')
-		document.getElementById('icon-hint').style.transform = 'rotate(0deg)'
+		document.getElementById('icon-hint').style.transform = 'rotate(7deg)'
 		iconhide[0].classList.add('icon-hide_2')
 		searchInput.style.padding = '0 10px 0 45px'
 		for (let i = 0; i < textArray.length; i++) {
@@ -128,18 +124,63 @@ function searchFriend() {
 		hide = true
 	}
 }
-<<<<<<< HEAD
-(function notiCount() {
-  let numOfNoti = document.getElementsByClassName("notiList__item").length
-  document.getElementById("notifications-num").innerHTML = numOfNoti
+
+;(function notiCount() {
+	let numOfNoti = document.getElementsByClassName('notiList__item').length
+	if (numOfNoti > 0)
+		document.getElementById('notifications-num').innerHTML = numOfNoti
+	else document.getElementById('notifications-num').style.opacity = '0'
 })()
 
-=======
-;(function notiCount() {
-  let numOfNoti = document.getElementsByClassName('notiList__item').length
-	if(numOfNoti > 0)
-    document.getElementById('notifications-num').innerHTML = numOfNoti
-	else 
-  document.getElementById('notifications-num').style.opacity = '0'
-})()
->>>>>>> 4737916 (demo)
+$(document).ready(function () {
+	if ($(window).width() < 428) {
+		let container = $('.container-home')
+		let notilist = $('.notiList')
+		notilist.css({
+			transform: '',
+		})
+		container.append(notilist)
+		console.log($('.notiList').attr('style', ''))
+		let arr = [$('.timeNew'), $('.friendlist'), $('.menuMb'), $('.notiList')]
+		let arrBtn = [$('#toHome'), $('#toFriend'), $('#toMenu'), $('#toNoti')]
+
+		$('.notiList').hide()
+		$('.menuMb').show()
+		$('.profileField').hide()
+		$('.friendlist').hide()
+		// $('.timeNew').show()
+		$('.timeNew').hide()
+
+		arrBtn.map(function (btn, iBtn) {
+			btn.click(function () {
+				arr.map(function (page, iPage) {
+					if (iPage != iBtn) {
+						page.fadeOut(100)
+					} else {
+						setTimeout(function () {
+							page.fadeIn(100)
+						}, 200)
+					}
+				})
+			})
+		})
+
+		$('.addFriendMbField').hide()
+		let check1 = true
+		$('#addFriendMb').click(function () {
+			if (check1) {
+				$('.menuMb__item:not(#addFriendMb)').fadeToggle(200)
+				setTimeout(function () {
+          $('.addFriendMbField').fadeToggle(200)
+				},200)
+				check1 = false
+			} else {
+        setTimeout(function () {
+          $('.menuMb__item:not(#addFriendMb)').fadeToggle(200)
+				}, 200)
+				$('.addFriendMbField').fadeToggle(200)
+        check1 = true
+			}
+		})
+	}
+})

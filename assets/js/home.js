@@ -64,3 +64,4 @@ function loadFile(event) {
 		URL.revokeObjectURL(output.src);
 	};
 }
+

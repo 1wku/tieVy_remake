@@ -729,6 +729,9 @@
     margin: 0;
   }
 }
+.nbm {
+  display: none;
+}
 //mobile
 @media only screen and (max-width: 46.1875em) {
   .container-home {
@@ -878,4 +881,16 @@
     }
   }
   // $('.profileField'), $('.timeNew__body'), $('.friendlist')
+}
+
+
+.post__footer-numLike  {
+  position: absolute;
+  bottom: 50%;
+  left: 120%;
+  transform: translate(-50%, 50%);
+  font-weight: 500;
+}
+.post__footer {
+  padding-bottom: 10px;
 }

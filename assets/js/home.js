@@ -44,15 +44,33 @@ let like = (event) => {
 	if (btnLike.classList.contains("post__footer-btnLike")) {
 		if (btnLike.style.color != "white") {
 			btnLike.style.color = "white";
+      if(arrBtn[3].style.color != "") {
+        console.log('lal')
+        event.target.parentNode.childNodes[3].childNodes[3].innerHTML --
+      }
 			arrBtn[3].style.color = "";
+      // ++ num of like
+      event.target.parentNode.childNodes[1].childNodes[3].innerHTML ++
 		} else {
-			btnLike.style.color = "";
+      btnLike.style.color = "";
+      // -- num of like
+      event.target.parentNode.childNodes[1].childNodes[3].innerHTML --
 		}
 	} else {
-		if (btnLike.style.color != "white") {
-			btnLike.style.color = "white";
+    if (btnLike.style.color != "white") {
+      btnLike.style.color = "white";
+      if(arrBtn[1].style.color != "") {
+        console.log('lal')
+        event.target.parentNode.childNodes[1].childNodes[3].innerHTML --
+      }
 			arrBtn[1].style.color = "";
-		} else btnLike.style.color = "";
+      // ++ num of dislike
+      event.target.parentNode.childNodes[3].childNodes[3].innerHTML ++
+		} else {
+      btnLike.style.color = "";
+      // ++ num of dislike
+      event.target.parentNode.childNodes[3].childNodes[3].innerHTML --
+    } 
 	}
 };
 

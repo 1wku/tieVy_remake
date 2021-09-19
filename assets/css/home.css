@@ -702,6 +702,10 @@
     margin: 0;
   }
 }
+.nbm {
+  display: none;
+}
+
 @media only screen and (max-width: 46.1875em) {
   .container-home {
     width: 100vw;
@@ -854,6 +858,17 @@
     margin-right: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), -2px -2px 5px #414e623a;
   }
+}
+.post__footer-numLike {
+  position: absolute;
+  bottom: 50%;
+  left: 120%;
+  transform: translate(-50%, 50%);
+  font-weight: 500;
+}
+
+.post__footer {
+  padding-bottom: 10px;
 }
 
 /*# sourceMappingURL=home.css.map */

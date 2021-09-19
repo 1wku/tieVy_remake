@@ -366,9 +366,11 @@
                     <div class="post__footer">
                       <button class="post__footer-btnLike btn" onclick="like(event)">
                         <ion-icon name="heart"></ion-icon>
+                        <span class="post__footer-numLike">0</span>
                       </button>
                       <button class="post__footer-btnDisLike btn" onclick="like(event)">
                         <ion-icon name="heart-dislike"></ion-icon>
+                        <span class="post__footer-numLike">0</span>
                       </button>
                       <button class="post__footer-btncmt" onclick="openCmtField(event)">
                         <ion-icon name="chatbox-ellipses"></ion-icon>
@@ -742,7 +744,7 @@
                 </div>
               </div>
             </div>
-            
+
             <a class="menuMb__item">
               <ion-icon name="cog"></ion-icon>
               <span>Modify your account</span>
@@ -772,5 +774,4 @@
         <script src="./assets/js/navigartionBar.js"></script>
         <script src="./assets/js/home.js"></script>
       </body>
-
     </html>
